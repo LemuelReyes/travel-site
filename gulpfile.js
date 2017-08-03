@@ -3,7 +3,8 @@ watch = require('gulp-watch'),
 postcss = require('gulp-postcss'),
 autoprefixer = require('autoprefixer'),
 cssvars = require('postcss-simple-vars'),
-nested = require('postcss-nested');
+nested = require('postcss-nested'),
+cssImport = require('postcss-import');
 
 gulp.task('default', function() {
   console.log("hurray you created a gulp fask");
@@ -15,8 +16,8 @@ gulp.task('html', function(){
 
 gulp.task('styles', function(){
  return gulp.src('./app/assets/styles/styles.css')
- .pipe(postcss([cssvars, nested, autoprefixer]))
- .pipe(gulp.dest('./app/temp/styles'))
+ .pipe(postcss([cssImport, cssvars, nested, autoprefixer]))
+ .pipe(gulp.dest('./app/temp/styles'));
 });
 
 gulp.task('watch', function(){
