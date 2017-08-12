@@ -582,6 +582,19 @@ a {
   }
   }
 
+.wrapper--no-padding-until-large {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+@media (min-width: 1010px) {
+
+.wrapper--no-padding-until-large {
+      padding-left: 18px;
+      padding-right: 18px
+  }
+  }
+
 .wrapper .wrapper {
     padding-right: 0;
     padding-left: 0;
@@ -621,6 +634,17 @@ a {
   }
   }
 
+.page-section--no-b-padding-until-large {
+    padding-bottom: 0;
+  }
+
+@media (min-width: 1010px) {
+
+.page-section--no-b-padding-until-large {
+      padding-bottom: 4.5rem
+  }
+  }
+
 .page-section--blue {
     background-color: #2f5572;
     color: #FFF;
@@ -630,7 +654,7 @@ a {
     background-color: #e0e6e4;
   }
 
-@media (min-width: 800px) {
+@media (min-width: 1010px) {
 
 .page-section--testimonials {
       background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
@@ -692,24 +716,10 @@ a {
     margin-top: 0;
   }
 
-.row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-@media (min-width: 800px) {
-
-.row {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row
-}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
   }
 
 .row--t-padding {
@@ -765,10 +775,40 @@ a {
     }
 
     .row__medium-8 {
+      float: left;
       width: 66.66%;
     }
 
     .row__medium-8--smaller {
+      width: 63%;
+    }
+  }
+
+@media (min-width: 1010px) {
+
+    .row__b-margin-until-large {
+      margin-bottom: 0rem;
+    }
+
+    .row__large-4 {
+      float: left;
+      width: 33.33%;
+    }
+
+    .row__large-4--larger {
+      width: 37%;
+    }
+
+    .row__large-6 {
+      float: left;
+      width: 50%;
+    }
+
+    .row__large-8 {
+      width: 66.66%;
+    }
+
+    .row__large-8--smaller {
       width: 63%;
     }
   }
@@ -785,6 +825,22 @@ a {
   }
 
 .row--equal-height-at-medium > div {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+@media (min-width: 1010px) {
+
+.row--equal-height-at-large {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex
+  }
+  }
+
+.row--equal-height-at-large > div {
+      float: none;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -895,10 +951,10 @@ a {
   margin-bottom: 98px;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 1010px) {
 
 .testimonial {
-    padding: 0 1.8125rem 1rem 1.8125rem;
+    padding: 0 1.8125rem 1px 1.8125rem;
     margin-bottom: 0
 }
   }
