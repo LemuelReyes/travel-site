@@ -6,8 +6,16 @@
     flex-direction: row;
   }
 
+  &--t-padding {
+    padding-top: 80px;
+  }
+
   &--gutters {
     margin-right: -65px;
+  }
+
+  &--gutters-small {
+    margin-right: -45px;
   }
 
   &--gutters-large {
@@ -18,7 +26,11 @@
     padding-right: 65px;
   }
 
-  &--gutters > div {
+  &--gutters-small > div {
+    padding-right: 45px;
+  }
+
+  &--gutters-large > div {
     padding-right: 100px;
   }
 
@@ -52,6 +64,18 @@
 
     &__medium-8--smaller {
       width: 63%;
+    }
+  }
+
+  /* begin equal height rules */
+
+  &--equal-height-at-medium {
+    @mixin atMedium {
+      display: flex;
+    }
+
+    & > div {
+      display: flex;
     }
   }
 }
